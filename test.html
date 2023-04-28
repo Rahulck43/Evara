@@ -1,0 +1,81 @@
+<td>
+    <% if (order.status==='Pending') { %>
+    <div class="dropdown">
+        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+            id="<%= order._id %>" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fi-rs-shopping-bag mr-5"></i>
+            <%= order.status %>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="<%= order._id %>">
+            <li><a href="/admin/update-order-status/<%= order._id %>?status=Cancelled"
+                    class="dropdown-item">Cancelled
+                </a></li>
+                </ul>
+                </div>
+                <% } else if(order.status==='Order Placed') { %>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                            id="<%= order._id %>" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fi-rs-shopping-bag mr-5"></i>
+                            <%= order.status %>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="<%= order._id %>">
+                    <li><a href="/admin/update-order-status/<%= order._id %>?status=Dispatched"
+                    class="dropdown-item">Dispatched
+                </a></li>
+                <li><a href="/admin/update-order-status/<%= order._id %>?status=Delivered"
+                    class="dropdown-item">Delivered
+                </a></li>
+                <li><a href="/admin/update-order-status/<%= order._id %>?status=Returned"
+                    class="dropdown-item">Returned
+                </a></li>
+                <li><a href="/admin/update-order-status/<%= order._id %>?status=Cancelled"
+                    class="dropdown-item">Cancelled
+                </a></li>
+                </ul>
+                </div>
+                
+                <% } else if(order.status==='Dispatched') { %>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                            id="<%= order._id %>" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fi-rs-shopping-bag mr-5"></i>
+                            <%= order.status %>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="<%= order._id %>">
+                    <li><a href="/admin/update-order-status/<%= order._id %>?status=Delivered"
+                    class="dropdown-item">Delivered
+                </a></li>
+                <li><a href="/admin/update-order-status/<%= order._id %>?status=Cancelled"
+                    class="dropdown-item">Cancelled
+                </a></li>
+                <li><a href="/admin/update-order-status/<%= order._id %>?status=Returned"
+                    class="dropdown-item">Returned
+                </a></li>
+                </ul>
+                </div>
+                <% } else if(order.status==='Delivered') { %>
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button"
+                            id="<%= order._id %>" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fi-rs-shopping-bag mr-5"></i>
+                            <%= order.status %>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="<%= order._id %>">
+                    <li><a href="/admin/update-order-status/<%= order._id %>?status=Returned"
+                    class="dropdown-item">Returned
+                </a></li>
+                </ul>
+                </div>
+
+        </ul>
+    </div>
+    <% } %>
+</td>
+
+
+
+
+
+
+</script>
